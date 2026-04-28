@@ -1,0 +1,54 @@
+---
+title: "My Dashbord at IAS"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard) # always
+```
+
+<!-- links -->
+```{r}
+map1link= "map1.rds"
+viz1=map1link
+
+map2link= "map2.rds"
+viz2=map2link
+
+map3link= "map3.rds"
+viz3=map3link
+```
+
+## Intro {.sidebar}
+This dashboard presents three spatial visualizations created from South and North America geopackage on mobiles population.
+
+Mobiles DDM
+Mobiles PSM
+Mobiles density Choropleth
+
+
+## Column {data-width="450"}
+
+### Population DDM
+```{r}
+
+readRDS(viz1)
+```
+
+### Population PSM
+
+```{r}
+
+readRDS(viz2)
+```
+
+## Column {data-width="550"}
+
+### Population density Choropleth
+
+```{r}
+readRDS(viz3)
+```
+
